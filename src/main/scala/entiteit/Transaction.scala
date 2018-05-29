@@ -1,7 +1,3 @@
 package entiteit
 
-trait Transaction {
-
-}
-
-class TransactionImpl extends Transaction
+case class Transaction(sender: String, recipient: String, amount: Long, blockIndex : Long)
