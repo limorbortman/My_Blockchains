@@ -2,7 +2,7 @@ package entiteit
 
 trait Blockchain {
 
-  def newBlock(): Unit // Creates a new Block and adds it to the chain
+  def newBlock(proof : Option[Long], previousHash : Option[Long]): Block // Creates a new Block and adds it to the chain
 
   def newTransaction(sender: String, recipient: String, amount: Long): Long //Creates a new transaction and adds it to the transactions
 
@@ -12,10 +12,16 @@ trait Blockchain {
 
 class BlockchainImpl(chain: Seq[Block] = Seq[Block](), transactions: Seq[Transaction] = Seq[Transaction]()) extends Blockchain {
 
-  override def newBlock(): Unit = chain :+ new Block()
+  override def newBlock(proof : Option[Long], previousHash : Option[Long]): Block = {
+    val prev = chain.last
+    val newBlock = Block(chain.size + 1, System.currentTimeMillis(), transactions, proof, previousHash.getOrElse(prev.hashCode()))
+    chain :+ newBlock
+    transactions diff transactions //Reset the current list of transactions
+    newBlock
+  }
 
   override def newTransaction(sender: String, recipient: String, amount: Long): Long = {
-    transactions :+ new Transaction(sender, recipient, amount, chain.size - 1)
+    transactions :+ Transaction(sender, recipient, amount, chain.size - 1)
     chain.size
   }
 
