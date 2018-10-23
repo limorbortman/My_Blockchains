@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_Blockchains-my_blockchains-build.iml" filepath="$PROJECT_DIR$/.idea/modules/My_Blockchains-my_blockchains-build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Project-my_blockchains.iml" filepath="$PROJECT_DIR$/.idea/modules/Project-my_blockchains.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/my_blockchains.iml" filepath="$PROJECT_DIR$/.idea/modules/my_blockchains.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/my_blockchains-build.iml" filepath="$PROJECT_DIR$/.idea/modules/my_blockchains-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-my_blockchains.iml" filepath="$PROJECT_DIR$/.idea/modules/project-my_blockchains.iml" />
     </modules>
   </component>
 </project>
